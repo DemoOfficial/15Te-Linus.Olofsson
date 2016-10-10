@@ -1,0 +1,26 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Grafik extends JFrame {
+	
+	private int width = 100;
+	private int height = 100;
+	
+	public Grafik(){
+		setSize(700, 600); //x, y
+		setLocation(300, 75);
+		setDefaultCloseOperation(3);
+		setTitle("Grafisk projekt");
+		setResizable(false);
+		setVisible(true);
+	}
+		
+	public static void main(String[] args) {
+		new Grafik();
+	}
+	
+	public void paint(Graphics g){
+		g.setColor(Color.blue);
+		g.drawRect(70, 100, width, height);
+	}
+}
