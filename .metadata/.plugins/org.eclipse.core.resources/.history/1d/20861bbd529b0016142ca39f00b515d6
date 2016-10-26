@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class StenSaxPase {
+
+	public static void main(String[] args) {
+		boolean Play=true;
+		boolean Exit;
+		boolean N = Play;
+		Scanner test = new Scanner(System.in);
+		int dator,spelare;
+		String choice [] = {"sten", "sax", "påse"};
+		dator = (int) Math.random() *3;
+
+
+		System.out.println("sten sax påse!");
+		do{
+			System.out.println("Skriv in 0 för sten, 1 för sax, 2 för påse");
+
+			Scanner spelarval = new Scanner(System.in);
+			Scanner in = new Scanner(System.in);
+			//for(spelare=0; spelare<3; spelare++);{
+			//spelare = spelarval.nextInt();
+
+			System.out.println();
+			System.out.println("Du valde: "+choice[spelare]);
+			System.out.println("Datorn valde: "+choice[dator]);
+			in.close();
+			if ((spelare == 0) && (dator == 1) ||
+					(spelare ==1 && dator == 2) ||
+					(spelare == 2 && dator == 0))
+				System.out.println("Du vann!");
+			else if (dator == spelare)
+				System.out.println("Oavgjort!");
+			else
+				System.out.println("RIP!");
+			
+				System.out.println("to play again press Y if you wish to give up press N");
+
+			String response = test.nextLine();
+			if(response.equalsIgnoreCase("Y")) {
+				Play = false;		 
+			}
+		} while (Play);
+	}
+}
+
+//do{
+//spelare = spelarval.nextInt();
+
+//}while(!((spelare <3))) && (( dator >3))
+
+// for(int spelarval=0; spelarval<2; spelarval=++);
+
+
+
+
