@@ -1,0 +1,31 @@
+
+	public class NumberSort {
+
+		
+	   
+	        int [][] multi = new int [5][10];
+//	        int [][] multi = new int [][]; 
+
+	   
+
+    void showGrid(int[][] krypto, char[] key){
+    }
+
+    public static void main(String[] args) {
+
+
+        int sizeX=5, sizeY=5; //Kryptots storlek
+
+
+        char key [] = new char [30];
+        for(int i =0; i < sizeX; i++){
+            System.out.print("+--");}
+            System.out.print("+");
+            for(int j = 0; j< sizeY; j++){
+
+
+  //              System.out.print(Grid[sizeX][sizeY]);
+            }
+        }
+
+    }

@@ -14,7 +14,7 @@ public class StenSaxPase {
 
 
 		System.out.println("sten sax påse!");
-		do{
+		for(dator,spelare);{
 			System.out.println("Skriv in 0 för sten, 1 för sax, 2 för påse");
 
 			Scanner spelarval = new Scanner(System.in);
