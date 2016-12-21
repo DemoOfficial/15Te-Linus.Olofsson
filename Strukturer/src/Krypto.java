@@ -1,7 +1,7 @@
 
-public class Krypto {
 
-}/* 
+
+/* 
 1.Mata in krupto
 
 2.Skriv ut krypto
@@ -14,7 +14,7 @@ Hur ska jag hålla koll på vad jag matar in, så att rätt bockastv hamnar på rätt 
 "T = 14! samma fast tvärtom. 
 */
 
-public class Start {
+public class Krypto {
 
     static void println(String stringtoprint){
         System.out.println(stringtoprint);
@@ -300,5 +300,7 @@ public class Start {
         key[4] = 'P';
         key[10] = 'R';
         showGrid(krypto, key);
+        
+        
     }
 }

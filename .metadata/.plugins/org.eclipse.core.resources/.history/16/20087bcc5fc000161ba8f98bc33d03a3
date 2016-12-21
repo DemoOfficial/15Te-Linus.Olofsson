@@ -1,0 +1,86 @@
+import java.net.URL;
+import java.util.ArrayList;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javax.sound.sampled.AudioInputStream;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.util.Scanner;
+import java.io.*;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.*;
+import javazoom.jl.converter.*;
+import javazoom.jl.player.advanced.*;
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.*;
+import javax.sound.sampled.AudioInputStream.*;
+public class Loop {
+	
+	/**
+	 * A simple Java sound file example (i.e., Java code to play a sound file).
+	 * AudioStream and AudioPlayer code comes from a javaworld.com example.
+	 * @author alvin alexander, devdaily.com.
+	 */
+//**	public class JavaAudioPlaySoundExample
+	
+	  /*public  static void idiot() 
+	  throws Exception{
+		  String bip = new String();
+		  bip = "C:\\BS\\You are an idiot!.mp3";
+		  Media Play = new Media(bip);
+		  MediaPlayer mediaPlayer = new MediaPlayer();
+		  mediaPlayer.play();
+	  }/*
+	 /*{
+	    //open the sound file as a Java input stream
+	    String gongFile = "C:\\BS\\You are an idiot!.mp3";
+	    InputStream in = new FileInputStream(gongFile);
+
+	    // create an audiostream from the inputstream
+	    AudioInputStream audioStream = new AudioInputStream(in);
+
+	    // play the audio clip with the audioplayer class
+	    AudioPlayer.player.start(audioStream);
+	  }*/
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		Thread thread = new Thread(() -> {
+			for(int i = 0; i < 10; i++) {
+				System.out.println(i);
+				File newFile = new File("C:", String.format("%d.txt", i));
+			}
+		});
+		
+		thread.start();
+		
+		ArrayList<JFrame> al = new ArrayList<>();
+			JFrame frame = new JFrame();
+			frame.setLocationByPlatform(true);
+			frame.setSize(500, 500);
+			frame.setVisible(true);
+			showLoader(frame);
+			al.add(frame);
+		
+	}
+	
+	public static void showLoader(JFrame frameLoader){
+        URL url = Loop.class.getResource("C:\\BS\\crazyfrogbrothers.gif");
+        Icon icon = new ImageIcon(url);
+        JLabel label = new JLabel(icon);
+        frameLoader.setUndecorated(true);
+        frameLoader.getContentPane().add(label);
+        frameLoader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameLoader.pack();
+        frameLoader.setLocationRelativeTo(null);
+        frameLoader.setVisible(true);
+	// ta bort/ lägg till för modifering och test Thread.sleep(1000);
+	
+	}
+	
+	
+}
+// Bara för jag kan
