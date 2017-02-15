@@ -1,0 +1,27 @@
+package javazoom.io;
+
+public class AdventureGame {
+	
+	float hälsa = 100;
+	int pengar = 10;
+	String förnamn= ""; 
+	String efternamn="";
+	String spelarnamn="";
+	int ålder;
+	int sträcka = 0;
+	int posX=0;
+	int posY=0;
+  
+	
+
+
+public static void main(String[]args){
+    //oresentera spelet
+	//läs in spelarens namn o karaktärsnamn
+	//börja spelet
+	
+	
+	String Komando="";
+	
+}
+}

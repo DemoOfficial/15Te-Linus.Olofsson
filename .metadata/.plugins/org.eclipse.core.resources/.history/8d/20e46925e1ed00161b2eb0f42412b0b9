@@ -1,0 +1,34 @@
+package javazoom.io;
+
+import java.util.Scanner;
+
+public class Name {
+
+    //Förnamn & efternamn
+	//samt spelarnamn
+
+
+public static void main(String[]args)
+{
+	System.out.println("Fyll i ditt förnamn, efternamn och spelarnamn");
+	
+	Scanner in = new Scanner(System.in);
+	
+	String Name= in.nextLine();
+	
+	
+	System.out.println("Förnamn:");
+	String förnamn = (Name+ "");
+	
+	
+	System.out.println("Efternamn:");
+	String efternamn = (Name +"");
+	
+	
+	System.out.println("spelarnamn:");
+	String spelarnamn= (Name +"");
+
+	
+	
+}
+}

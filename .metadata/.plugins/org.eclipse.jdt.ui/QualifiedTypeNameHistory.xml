@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioFileFormat"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
 </qualifiedTypeNameHistroy>

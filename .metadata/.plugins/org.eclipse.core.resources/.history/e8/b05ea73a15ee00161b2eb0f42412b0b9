@@ -1,0 +1,13 @@
+package javazoom.io;
+
+import java.util.Scanner;
+
+public class Age {
+	
+	Scanner in = new Scanner(System.in);
+	int pAge;{
+		System.out.print("Skriv in din ålder");
+	    String pAge = in.nextLine();
+	
+	}
+	}

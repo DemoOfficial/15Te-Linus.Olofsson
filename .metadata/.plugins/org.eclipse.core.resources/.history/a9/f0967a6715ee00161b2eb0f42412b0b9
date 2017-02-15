@@ -1,0 +1,13 @@
+package javazoom.io;
+
+import java.util.Scanner;
+
+public class Age {
+	
+	Scanner in = new Scanner(System.in);
+	
+		System.out.print("Skriv in din Older");
+	    String pAge = in.nextLine();
+	
+	}
+	

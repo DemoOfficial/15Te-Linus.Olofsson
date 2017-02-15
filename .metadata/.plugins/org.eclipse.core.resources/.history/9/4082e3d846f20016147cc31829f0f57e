@@ -1,0 +1,104 @@
+package javazoom.io;
+
+import java.util.Scanner;
+
+public class AdventureGame {
+	
+	static float hälsa = 100;//klar
+	int pengar = 10;//klar
+	String förnamn= ""; //Klar
+	String efternamn=""; //Klar
+	String spelarnamn=""; // Klar
+	String ålder; // Klar
+	int sträcka = 0;//Klar
+	static int posX=0;//Klar
+	static int posY=0;//Klar
+	static int CNPC = prob (9)+1;// CNPC står för Cash-NPC
+	
+	static int prob(){
+		return (int)(Math.random()*100);
+	}
+	static int prob(int max){
+		return (int)(Math.random()*max);
+	}
+	
+  
+	
+
+
+
+
+public static void main(String[]args){
+	Scanner in = new Scanner(System.in);
+    //oresentera spelet
+	System.out.println("Ett äventyrsel!");
+	System.out.println("Du kommer dö och hata Tobbe, grundaren av spelet");
+	//läs in spelarens namn o karaktärsnamn
+	//börja spelet
+	
+	Name namn= new Name();
+	
+	
+	String Komando="Exit";
+	System.out.print("Vad ska vi göra?");
+	Komando = in.nextLine();
+	//Håll på så länge det masika ordet INTE är korrekt/inmatat
+	while (!(Komando.equals("Exit")  )  )
+	{
+		
+		//här hanteras sakern som skall göras och hända?
+		
+		System.out.print("Vad ska vi göra?");
+		Komando = in.nextLine();
+		if(Komando.equalsIgnoreCase("N")){
+			System.out.println("Norrut!");
+			posY =+1;
+			}
+			if(Komando.equalsIgnoreCase("S")){
+			System.out.println("Söderut!");
+			posY -=1;
+			}
+			if(Komando.equalsIgnoreCase("Ö")||
+					Komando.equalsIgnoreCase("O")|| 
+					Komando.equalsIgnoreCase("E")){
+			        System.out.println("Österut!");
+			        posX +=1;
+			}
+			if(Komando.equalsIgnoreCase("V") || Komando.equalsIgnoreCase("W")){
+			System.out.println("Västerut!");
+			posX -=1;
+			}
+			//hälsa -=0.1;
+			
+			int vadSkaHända = prob();
+          if (vadSkaHända == 0 ) { // Sannolikhet 1% för monster
+			 //Moonster
+			int monster = prob(2)+1;
+			hälsa -= monster;
+			System.out.println("Du stötte på monster tobbe, han har klättrat upp ur sitt hål, han drog sin mac i ditt huvud och skadade "+hälsa+" på dig");
+	 }
+			 else if (vadSkaHända <= 10) { // sannolikhet 10 % för NPC
+			//NPC
+				 int NPC = prob (9)+1;
+				 hälsa-=NPC;
+	}
+			 else if (vadSkaHända <=15) { // Sannolikhet 5 % för pengar
+	       //pengar
+				 int Cash= CNPC
+				 Cash=CNPC; //CNPC tidigare deklarerad som cash npc på 5%
+	}
+			else if (vadSkaHända <=18){ // Sannolikhet 3 % för grop 
+			//gropar
+				int djup = prob(5)+1;
+				hälsa -= djup;
+				System.out.println("Du ramlade, slog dig som fan, helvete vad ont det gjorde. I gropen låg tobias och bet dig i benet...jobbigt jag vet... men han är sån...du förlorade "+djup+" hälsa!");
+    }
+			System.out.println("Du är på ("+posX+","+posY+") och har hälsa:" +hälsa);
+
+			System.out.print("Vad ska vi göra? ");
+			Komando = in.nextLine();	
+	}
+	System.out.print("HejdÅ bitch");
+	in.close();
+	}
+}

